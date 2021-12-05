@@ -15,8 +15,6 @@ const lineCoordinates = input.split("\n").map(value => {
 
 function part1() {
     const coordinates = lineCoordinates.filter(value => value.x1 === value.x2 || value.y1 === value.y2)
-    const maxX = Math.max(coordinates.sort(a => Math.max(a.x1, a.x2))[0].x1, coordinates.sort(a => Math.max(a.x1, a.x2))[0].x2)
-    const maxY = Math.max(coordinates.sort(a => Math.max(a.y1, a.y2))[0].y1, coordinates.sort(a => Math.max(a.y1, a.y2))[0].y2)
     const points = []
     coordinates.forEach(value => {
         const {x1, y1, x2, y2} = value
@@ -48,8 +46,6 @@ function part1() {
 
 function part2() {
     const coordinates = lineCoordinates
-    const maxX = Math.max(coordinates.sort(a => Math.max(a.x1, a.x2))[0].x1, coordinates.sort(a => Math.max(a.x1, a.x2))[0].x2)
-    const maxY = Math.max(coordinates.sort(a => Math.max(a.y1, a.y2))[0].y1, coordinates.sort(a => Math.max(a.y1, a.y2))[0].y2)
     const points = []
     coordinates.forEach(value => {
         const {x1, y1, x2, y2} = value
