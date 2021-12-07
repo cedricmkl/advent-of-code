@@ -7,10 +7,9 @@ const horizontalPositions = input.split(",").map(value => parseInt(value))
 function solve(checkFunction) {
     let cheapestPostion = Number.MAX_VALUE
     for (let goal = Math.min(...horizontalPositions); goal < Math.max(...horizontalPositions); goal++) {
-        let totalConsumption = 0
-        horizontalPositions.map(currentPosition => checkFunction(currentPosition, goal))
-            .forEach(value => totalConsumption += value)
-        cheapestPostion = Math.min(totalConsumption, cheapestPostion)
+        cheapestPostion = Math.min(cheapestPostion,
+            horizontalPositions.map(currentPosition => checkFunction(currentPosition, goal))
+            .reduce((total, current) => total += current))
     }
     return cheapestPostion
 }
