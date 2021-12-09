@@ -4,13 +4,9 @@ const input = fs.readFileSync(path.join(__dirname, "input.txt"), "utf-8")
 
 const digitInput = input.split("\n").map(value => {
     const split = value.split("|").map(value1 => value1.trim())
-    return [split[0].split(" "), split[1].split(" ")]
+    return [split[0].split(" ").map(value1 => value1.split("").sort().join("")),
+        split[1].split(" ").map(value1 => value1.split("").sort().join(""))]
 })
-
-
-function check(input, chars) {
-    return chars.split("").every(value1 => input.includes(value1))
-}
 
 
 function part1() {
@@ -69,17 +65,14 @@ function part2() {
         signals[5] = find(5)
 
         let outputValue = ""
-        output.forEach((digits) => {
+        output.forEach(value => {
             for (let signalsKey in signals) {
-                if (check(digits, signals[signalsKey])) {
-                    outputValue += signalsKey
-                    console.log(signalsKey)
+                if (value === signals[signalsKey]) {
+                    outputValue += signalsKey.toString()
                 }
             }
         })
-        console.log(outputValue)
         sum += parseInt(outputValue)
-
     })
     return sum
 }
