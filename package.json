@@ -13,7 +13,9 @@
     "day6": "node day6/script.js",
     "day7": "node day7/script.js",
     "day8": "node day8/script.js",
-    "day9": "node day9/script.js"
+    "day9": "node day9/script.js",
+    "day10": "node day10/script.js"
+
   },
   "keywords": [],
   "author": "",
