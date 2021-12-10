@@ -64,7 +64,7 @@ function part2() {
             if (pairs[char]) {
                 requiredClosingTags = [...requiredClosingTags, pairs[char]]
             } else {
-                 requiredClosingTags.pop()
+                requiredClosingTags.pop()
             }
         })
         let score = 0
@@ -73,7 +73,7 @@ function part2() {
         })
         scores.push(score)
     })
-    return scores.sort((a, b)=> a - b )[(scores.length - 1) / 2]
+    return scores.sort((a, b) => a - b)[(scores.length - 1) / 2]
 }
 
 
