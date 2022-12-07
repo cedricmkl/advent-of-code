@@ -12,7 +12,6 @@ for (let i = 13; i < input.length; i++) {
     }
 }
 
-
 function containsDuplicates(array: Array<string>) {
     for (let i = 0; i < array.length; i++) {
         if (array.indexOf(array[i]) !== array.lastIndexOf(array[i])) {
