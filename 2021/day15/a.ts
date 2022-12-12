@@ -7,7 +7,7 @@ const data = new Map<string, [Node | undefined, number]>
 data.set(toMapKey([0, 0]), [undefined, 0])
 
 let que: Array<Node> = [[0, 0]]
-while(que.length > 0) {
+while (que.length > 0) {
     que = que.sort((a, b) => data.get(toMapKey(a))![1] - data.get(toMapKey(b))![1])
     const node = que.shift()!
     getNeighbours(node).forEach((neighbourNode) => {
@@ -17,11 +17,11 @@ while(que.length > 0) {
             que.push(neighbourNode)
         }
     })
-} 
+}
 
 function getCost(node: Node): number {
     const nodeData = data.get(toMapKey(node))
-    if(nodeData === undefined) return Infinity
+    if (nodeData === undefined) return Infinity
     return nodeData[1]
 }
 
