@@ -13,4 +13,4 @@ def solve(input):
 input = parse("input.txt")
 part1, part2 = solve(input)
 print(f"Part 1: {part1}")
-print(f"Part 2: {part1}")
+print(f"Part 2: {part2}")
