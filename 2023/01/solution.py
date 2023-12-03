@@ -47,10 +47,6 @@ def part2(input):
             b = digits[results[-1]]
         else:
             b = results[-1]
-
-        assert a is not None
-        assert b is not None
-        print(f"{line} {a} + {b} = {int(f'{a}{b}')}")
         sum += int(f"{a}{b}")
     print(f"Part 2: {sum}")
 
